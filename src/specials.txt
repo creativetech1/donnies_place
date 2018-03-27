@@ -1,0 +1,7 @@
+Sunday,Closed,0
+Monday,Taco's,4.25
+Tuesday,Spaghetti,6.25
+Wednesday,Pizza,10.00
+Thursday,Chicken,7.00
+Friday,Donnie Don't Mystery Dish,5.00
+Saturday,Closed,0
