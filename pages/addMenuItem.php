@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Add Menu </title>
+    <title>Add Menu</title>
     <?php
         $document_root = $_SERVER['DOCUMENT_ROOT'];
         require("$document_root/components/head.php");
