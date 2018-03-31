@@ -1,6 +1,6 @@
 <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="http://mycreativetech.net/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.js"></script>
     <script>
-        $(".button-collapse").sideNav();
-
+        var elem = document.querySelector('.sidenav');
+        var instance = M.Sidenav.init(elem, {inDuration: 200, outDuration: 200});
     </script>

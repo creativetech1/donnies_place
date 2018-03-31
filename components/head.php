@@ -3,9 +3,4 @@
 <!--Import Google Icon Font-->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!--Import materialize.css-->
-<link type="text/css" rel="stylesheet" href="http://mycreativetech.net/css/materialize.min.css" media="screen,projection" />
-<script>
-    $(document).ready(function(){
-        $('select').formSelect();
-    });
-</script>
+<link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />

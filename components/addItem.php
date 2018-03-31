@@ -1,6 +1,6 @@
    
 <?php
-    
+    require("$document_root/components/dbConnect.php");
 ?>
 <div>
 
@@ -8,17 +8,28 @@
         <div class="row">
             <div class="col s4"></div>
             <div class="col s4">
-                <div class="categories">
-                    <select class="browser-default blue-grey darken-3 white-text" name="category">
-                      <option value="" disabled selected>Choose a category</option>
-                      <option value="1">Breakfast</option>
-                      <option value="2">Lunch</option>
-                      <option value="3">Dinner</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col s4"></div>
-        </div>
+              <div class="categories">
+                <?php
+                $sql = "SELECT * FROM categories";
+                if($result = $conn->query($sql)){
+                    if($result->num_rows > 0){
+                        echo '<select class="browser-default blue-grey darken-3 white-text" name="category">';
+                        echo '<option value="" disabled selected>Choose a category</option>';
+                        while($cat = $result->fetch_assoc()){
+                        echo '<option value='.$cat['category_id'].'>'.$cat['category'].'</option>';
+                        }
+                        echo '</select>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '<div class="col s4"></div>';
+                        echo '</div>';
+                        echo '</form>';
+                        echo '</div>';
+                        $result->free();
+                    }
+                }
+                $conn->close();
+                ?>
 
 
         <div class="row">
