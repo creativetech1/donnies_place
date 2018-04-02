@@ -4,7 +4,7 @@
 ?>
 <div>
 
-    <form action="/pages/the_menu.php" method="post">
+    <form action="the_menu.php" method="post">
         <div class="row">
             <div class="col s4"></div>
             <div class="col s4">
@@ -23,12 +23,10 @@
                         echo '</div>';
                         echo '<div class="col s4"></div>';
                         echo '</div>';
-                        echo '</form>';
                         echo '</div>';
                         $result->free();
                     }
                 }
-                $conn->close();
                 ?>
 
 
@@ -37,8 +35,8 @@
             <div class="col s4">
                 <div class="row">
                     <div class="input-field inline white-text">
-                        <input id="email_inline" type="text" class="validate" name="item_name">
-                        <label for="email_inline">Item Name</label>
+                        <input id="item_inline" type="text" class="validate" name="item_name">
+                        <label for="item_inline">Item Name</label>
                     </div>
                 </div>
             </div>
@@ -65,8 +63,8 @@
             <div class="col s4">
                 <div class="row">
                     <div class="input-field col s12 white-text">
-                        <textarea id="textarea1" class="materialize-textarea" name="description"></textarea>
-                        <label for="textarea1">Description</label>
+                        <textarea id="desc" class="materialize-textarea" name="description"></textarea>
+                        <label for="desc">Description</label>
                     </div>
                 </div>
             </div>
@@ -74,37 +72,58 @@
         </div>
 
 
-        <section>
             <div class="row">
-                <div class="col s4"></div>
-                <div class="col s4">
-                    <div class="categories">
-                        <select class="browser-default blue-grey darken-3 white-text" name="special">
-                          <option value="" disabled selected>Special</option>
-                          <option value="1">Yes</option>
-                          <option value="2">No</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col s4"></div>
-            </div>
+            <div class="col s4"></div>
+            <div class="col s4">
+              <div class="categories">
+                <?php
+                $sql = "SELECT * FROM specials";
+                if($result = $conn->query($sql)){
+                    if($result->num_rows > 0){
+                        echo '<select class="browser-default blue-grey darken-3 white-text" name="specials">';
+                        echo '<option value="" disabled selected>Special</option>';
+                        while($spec = $result->fetch_assoc()){
+                        echo '<option value='.$spec['special_id'].'>'.$spec['special'].'</option>';
+                        }
+                        echo '</select>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '<div class="col s4"></div>';
+                        echo '</div>';
+                        echo '</div>';
+                        $result->free();
+                    }
+                }
+                ?>
+
+
 
             <div class="row">
-                <div class="col s4"></div>
-                <div class="col s4">
-                    <div class="categories">
-                        <select class="browser-default blue-grey darken-3 white-text" name="day_of_week">
-                          <option value="" disabled selected>Day of Week</option>
-                          <option value="1">Monday</option>
-                          <option value="2">Tuesday</option>
-                          <option value="3">Wednesday</option>
-                          <option value="4">Thursday</option>
-                          <option value="5">Friday</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col s4"></div>
-            </div>
+            <div class="col s4"></div>
+            <div class="col s4">
+              <div class="categories">
+                <?php
+                $sql = "SELECT * FROM days_of_week";
+                if($result = $conn->query($sql)){
+                    if($result->num_rows > 0){
+                        echo '<select class="browser-default blue-grey darken-3 white-text" name="day_of_week">';
+                        echo '<option value="" disabled selected>Day of Week</option>';
+                        while($day = $result->fetch_assoc()){
+                        echo '<option value='.$day['day_of_week_id'].'>'.$day['day_of_week'].'</option>';
+                        }
+                        echo '</select>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '<div class="col s4"></div>';
+                        echo '</div>';
+                        echo '</div>';
+                        $result->free();
+                    }
+                }
+
+                // Close connection
+                $conn->close();
+                ?>
         </section>
 
 
@@ -112,7 +131,7 @@
             <div class="col s4"></div>
             <div class="col s4">
                 <div class="row right-align">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit 
+                    <button class="btn waves-effect waves-light red darken-1" type="submit" name="action">Submit 
                     <i class="material-icons right">send</i>
                 </button>
                 </div>
@@ -122,5 +141,3 @@
     </form>
 
 </div>
-
-

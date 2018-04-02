@@ -6,7 +6,7 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="/index.php">Home</a></li>
                 <li><a href="/pages/employee.php">Employee Login</a></li>
-                <li><a href="/pages/menu.php">Menu</a></li>
+                <li><a href="/pages/the_menu.php">Menu</a></li>
                 <li><a href="/pages/addMenuItem.php">Add Item</a></li>
                 <li><a href="#"><i class="material-icons">shopping_cart</i></a></li>
             </ul>
@@ -17,7 +17,7 @@
         <li style="width:100% !important;text-align:right !important;"><a class="sidenav-close right-align" href="#"><i class="material-icons">close</i></a></li>
         <li><a href="/index.php">Home</a></li>
         <li><a href="/pages/employee.php">Employee</a></li>
-        <li><a href="/pages/menu.php">Menu</a></li>
+        <li><a href="/pages/the_menu.php">Menu</a></li>
         <li><a href="/pages/addMenuItem.php">Add Item</a></li>
         <li><a href="#"><i class="material-icons">shopping_cart</i></a></li>
     </ul>
