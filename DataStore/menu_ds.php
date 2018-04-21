@@ -36,7 +36,16 @@ class Menu_ds extends Menu {
         $this->menu_img = $conn->real_escape_string($_POST['menu_img']);
       }
 
-      return $qry;
+      if($stmt->execute()){
+        return "Records inserted successfully.";
+      } 
+      else{
+        return "ERROR: Could not execute query: $sql. " . $conn->error;
+      }
+
+      // Close statement
+      $stmt->close();
+      $conn->close();
     }
 
 
