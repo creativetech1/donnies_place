@@ -7,7 +7,7 @@
                 <li><a href="/index.php">Home</a></li>
                 <li><a href="/pages/employee.php">Employee Login</a></li>
                 <li><a href="/pages/the_menu.php">Menu</a></li>
-                <li><a href="/pages/addMenuItem.php">Add Item</a></li>
+                <li><a href="/Applications/addItem.php">Add Item</a></li>
                 <li><a href="#"><i class="material-icons">shopping_cart</i></a></li>
             </ul>
         </div>

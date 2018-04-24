@@ -1,17 +1,39 @@
-   
-<?php
-    require("$document_root/components/dbConnect.php");
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Item</title>
+    <?php
+        $document_root = $_SERVER['DOCUMENT_ROOT'];
+        require("$document_root/Applications/components/head.php");
+    ?>
+</head>
+<body class="blue-grey darken-3">
+    <?php
+        require("$document_root/Applications/components/nav.php");
+        require("$document_root/DataStore/config.php");
+        $db = db_connect();
+    ?>
+
+    <div class="row">
+        <div class="col s4"></div>
+            <div class="col s4">
+                <h3 class="white-text">Create Menu Item</h3>
+            </div>
+        <div class="col s4"></div>
+    </div>
+
+    
+
 <div>
 
-    <form action="the_menu.php" method="post">
+    <form action="itemAdded.php" method="post">
         <div class="row">
             <div class="col s4"></div>
             <div class="col s4">
               <div class="categories">
                 <?php
                 $sql = "SELECT * FROM categories";
-                if($result = $conn->query($sql)){
+                if($result = $db->query($sql)){
                     if($result->num_rows > 0){
                         echo '<select class="browser-default blue-grey darken-3 white-text" name="category">';
                         echo '<option value="" disabled selected>Choose a category</option>';
@@ -78,7 +100,7 @@
               <div class="categories">
                 <?php
                 $sql = "SELECT * FROM specials";
-                if($result = $conn->query($sql)){
+                if($result = $db->query($sql)){
                     if($result->num_rows > 0){
                         echo '<select class="browser-default blue-grey darken-3 white-text" name="specials">';
                         echo '<option value="" disabled selected>Special</option>';
@@ -104,7 +126,7 @@
               <div class="categories">
                 <?php
                 $sql = "SELECT * FROM days_of_week";
-                if($result = $conn->query($sql)){
+                if($result = $db->query($sql)){
                     if($result->num_rows > 0){
                         echo '<select class="browser-default blue-grey darken-3 white-text" name="day_of_week">';
                         echo '<option value="" disabled selected>Day of Week</option>';
@@ -122,7 +144,7 @@
                 }
 
                 // Close connection
-                $conn->close();
+                $db->close();
                 ?>
         </section>
 
@@ -141,3 +163,11 @@
     </form>
 
 </div>
+</body>
+</html>   
+
+
+
+
+
+

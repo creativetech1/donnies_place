@@ -5,18 +5,18 @@
     <title>Donnie's Place</title>
     <?php
         $document_root = $_SERVER['DOCUMENT_ROOT'];
-        require("$document_root/components/head.php");
+        require("$document_root/Applications/components/head.php");
     ?>
 </head>
 
 <body class="blue-grey darken-3">
        
     <?php
-        require("$document_root/components/nav.php");
+        require("$document_root/Applications/components/nav.php");
     ?>
     
     <div>
-        <img class="responsive-img" src="/img/main.PNG" alt="" style='width:100%; height:25em;' />
+        <img class="responsive-img" src="/Applications/assets/img/main.PNG" alt="" style='width:100%; height:25em;' />
     </div>
     <div class="container">
         <div class="row">
@@ -37,12 +37,12 @@
 
                         $theDate = date('w');
 
-                        $monday = "<center><img src='/img/tacos.jpg' alt='Tacos' style='width:600px; height:300px;'/></center>";
-                        $tuesday = "<center><img src='/img/spaghetti.jpeg' alt='Spaghetti' style='width:600px; height:300px;'/></center>";
-                        $wednesday = "<center><img src='/img/pizza.jpg' alt='Pizza' style='width:600px; height:300px;'/></center>";
-                        $thursday = "<center><img src='/img/chicken.jpg' alt='Chicken' style='width:600px; height:300px;'/></center>";
-                        $friday = "<center><img src='/img/mystery.jpg' alt='Mystery' style='width:500px; height:300px;'/></center>";
-                        $sat_sun = "<center><img src='/img/closed.png' alt='Closed' style='width:600px; height:300px;'/></center>";
+                        $monday = "<center><img src='/Applications/assets/img/tacos.jpg' alt='Tacos' style='width:600px; height:300px;'/></center>";
+                        $tuesday = "<center><img src='/Applications/assets/img/spaghetti.jpeg' alt='Spaghetti' style='width:600px; height:300px;'/></center>";
+                        $wednesday = "<center><img src='/Applications/assets/img/pizza.jpg' alt='Pizza' style='width:600px; height:300px;'/></center>";
+                        $thursday = "<center><img src='/Applications/assets/img/chicken.jpg' alt='Chicken' style='width:600px; height:300px;'/></center>";
+                        $friday = "<center><img src='/Applications/assets/img/mystery.jpg' alt='Mystery' style='width:500px; height:300px;'/></center>";
+                        $sat_sun = "<center><img src='/Applications/assets/img/closed.png' alt='Closed' style='width:600px; height:300px;'/></center>";
 
                         switch($theDate) {
                         case "0" :
@@ -137,8 +137,8 @@
     </div>
     
     <?php
-        require("$document_root/components/footer.php");
-        require("$document_root/js/scripts.php");
+        require("$document_root/Applications/components/footer.php");
+        require("$document_root/Applications/assets/js/scripts.php");
     ?>
     
 </body>
