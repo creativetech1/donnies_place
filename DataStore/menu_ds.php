@@ -12,9 +12,9 @@ class Menu_ds extends Menu {
 
     public function insert(){
       
-        $qry = "INSERT INTO menu_items (menu_item_id, item_name, description, price, category_id_id, special_id_id, day_of_week_id, menu_img) VALUES (?, ?, ?, ?, ?, ?, ? ,?)";
+        $qry = "INSERT INTO menu_items (menu_item_id, item_name, description, price, category_id, special_id, day_of_week_id, menu_img) VALUES (?, ?, ?, ?, ?, ?, ? ,?)";
 
-      if($stmt = $conn->prepare($qry)){
+      if($stmt = $this->conn->prepare($qry)){
         $stmt->bind_param('ssssssss',
         $this->menu_item_id,
         $this->item_name,
@@ -26,14 +26,14 @@ class Menu_ds extends Menu {
         $this->menu_img
         );
 
-        $this->menu_item_id = $conn->real_escape_string($_POST['menu_item_id']);
-        $this->item_name = $conn->real_escape_string($_POST['item_name']);
-        $this->description = $conn->real_escape_string($_POST['description']);
-        $this->price = $conn->real_escape_string($_POST['price']);
-        $this->category_id = $conn->real_escape_string($_POST['category_id']);
-        $this->special_id = $conn->real_escape_string($_POST['special_id']);
-        $this->day_of_week_id = $conn->real_escape_string($_POST['day_of_week_id']);
-        $this->menu_img = $conn->real_escape_string($_POST['menu_img']);
+        $this->menu_item_id = $_POST['menu_item_id'];
+        $this->item_name = $_POST['item_name'];
+        $this->description = $_POST['description'];
+        $this->price = $_POST['price'];
+        $this->category_id = $_POST['category_id'];
+        $this->special_id = $_POST['special_id'];
+        $this->day_of_week_id = $_POST['day_of_week_id'];
+        $this->menu_img = $_POST['menu_img'];
       }
 
       if($stmt->execute()){

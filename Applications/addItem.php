@@ -26,7 +26,7 @@
 
 <div>
 
-    <form action="itemAdded.php" method="post">
+    <form action="../Business/itemAdded.php" method="post">
         <div class="row">
             <div class="col s4"></div>
             <div class="col s4">

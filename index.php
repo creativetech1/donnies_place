@@ -16,7 +16,7 @@
     ?>
     
     <div>
-        <img class="responsive-img" src="/Applications/assets/img/main.PNG" alt="" style='width:100%; height:25em;' />
+        <img class="responsive-img" src="/Applications/assets/img/restaurant1.jpg" alt="" style='width:100%; height:25em;' />
     </div>
     <div class="container">
         <div class="row">
